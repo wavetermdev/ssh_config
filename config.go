@@ -457,7 +457,7 @@ func (c *Config) GetAll(alias, key string) ([]string, error) {
 			case *KV:
 				// "keys are case insensitive" per the spec
 				lkey := strings.ToLower(t.Key)
-				if lkey == "match" {
+				if lkey == "match" && !c.ignoreMatchDirective {
 					panic("can't handle Match directives")
 				}
 				if lkey == lowerKey {
