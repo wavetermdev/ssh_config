@@ -338,13 +338,6 @@ func (u *UserSettings) ReloadConfigs() {
 	u.doLoadConfigs()
 }
 
-// ReloadConfigs clears the cached config data and freshly loads the config
-// files again.
-func (u *UserSettings) ReloadConfigs() {
-	u.loadConfigs = new(sync.Once)
-	u.doLoadConfigs()
-}
-
 func parseFile(filename string, ignoreMatchDirective bool) (*Config, error) {
 	return parseWithDepth(filename, ignoreMatchDirective, 0)
 }
