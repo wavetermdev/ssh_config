@@ -861,8 +861,9 @@ func init() {
 	}
 }
 
-func newConfig() *Config {
+func newConfig(ignoreMatchDirective bool) *Config {
 	return &Config{
+		ignoreMatchDirective: ignoreMatchDirective,
 		Hosts: []*Host{
 			&Host{
 				implicit: true,

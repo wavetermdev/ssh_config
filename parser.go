@@ -187,7 +187,7 @@ func parseSSH(flow chan token, system, ignoreMatchDirective bool, depth uint8) *
 		}
 	}()
 
-	result := newConfig()
+	result := newConfig(ignoreMatchDirective)
 	result.position = Position{1, 1}
 	parser := &sshParser{
 		ignoreMatchDirective: ignoreMatchDirective,
